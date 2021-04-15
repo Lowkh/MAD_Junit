@@ -20,7 +20,7 @@ public class Question3Test {
     }
   
     @Test
-    public void BMITest() {
+    public void DoubleTest() {
       String testVal = "10\n";
       byte[] testVal_bytes = testVal.getBytes();
       provideInput(testVal_bytes);
