@@ -18,7 +18,7 @@ public class Question1Test {
   
     }
     @Test
-    public void testPrint(){
+    public void PrintTest(){
         Question1.main(new String[]{"a"});
         Assert.assertEquals("Hello World!", out.toString().trim());
     }
