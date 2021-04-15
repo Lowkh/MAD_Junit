@@ -25,7 +25,7 @@ public class Question4Test {
       byte[] testVal_bytes = testVal.getBytes();
       provideInput(testVal_bytes);
       Question4.main(new String[]{"a"});
-      Assert.assertEquals("***\r\n**\n*", out.toString().trim());
+      Assert.assertEquals("***\n**\n*", out.toString().trim());
     }
   
     private void provideInput(byte[] int_bytes){
