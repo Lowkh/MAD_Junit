@@ -11,7 +11,7 @@ import org.junit.Test;
 public class Question2Test {
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
-    private ByteArrayInputStream in = new ByteArrayInputStream("10".getBytes());
+    private ByteArrayInputStream in = new ByteArrayInputStream("10\n".getBytes());
     
 
     
