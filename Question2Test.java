@@ -10,6 +10,8 @@ import org.junit.Test;
 public class Question2Test {
     private final ByteArrayOutputStream out = new ByteArrayOutputStream();
     private final PrintStream originalOut = System.out;
+    private ByteArrayOutputStream in = new ByteArrayInputStream("10".getBytes());
+    
 
     
     @Before
@@ -19,6 +21,7 @@ public class Question2Test {
     }
     @Test
     public void testPrint(){
+        System.setIn(in);
         Question2.main(new String[]{"a"});
         Assert.assertEquals("0.1", out.toString().trim());
     }
