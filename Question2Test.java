@@ -23,7 +23,10 @@ public class Question2Test {
     @Test
     public void testPrint(){
         System.setIn(in);
+        System.setIn(in);
         Question2.main(new String[]{"a"});
+        System.setIn(in);
+        System.setIn(in);
         Assert.assertEquals("0.1", out.toString().trim());
     }
     
