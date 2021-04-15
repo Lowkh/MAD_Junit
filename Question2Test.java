@@ -7,34 +7,33 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
-
 public class Question2Test {
-    private final ByteArrayOutputStream out = new ByteArrayOutputStream();
-    private final PrintStream originalOut = System.out;
+  private final ByteArrayOutputStream out = new ByteArrayOutputStream();
+  private final PrintStream originalOut = System.out;
 
-    private  ByteArrayInputStream in;
-
-    @Before
-    public void setStreams() {
-        System.setOut(new PrintStream(out));
   
-    }
+  @Before
+  public void setStreams() {
+      System.setOut(new PrintStream(out));
 
-    public void provideInfo(String data){
-      in = new ByteArrayInputStream(data.getBytes());
-      System.setIn(in);
-    }
-    @Test
-    public void BMITest(){
+  }
 
-      Question2.main(new String[]{"a"});
-      provideInfo("10\n");
-      Assert.assertEquals("0.1", out.toString().trim());
-      
-    }
-    
-    @After
-    public void restoreInitialStreams() {
-        System.setOut(originalOut);
-    }
+  @Test
+  public void BMITest() {
+    String testVal = "10\n10\n";
+    byte[] testVal_bytes = testVal.getBytes();
+    provideInput(testVal_bytes);
+    Question2.main(new String[]{"a"});
+    Assert.assertEquals("0.1", out.toString().trim());
+  }
+
+  private void provideInput(byte[] int_bytes){
+    ByteArrayInputStream testIn = new ByteArrayInputStream(int_bytes);
+    System.setIn(testIn);
+  }
+
+  @After
+  public void restoreInitialStreams() {
+      System.setOut(originalOut);
+  }
 }
